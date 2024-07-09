@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Define the battery directory
+battery_dir="/sys/class/power_supply/BAT0"
+
+# Extract battery percentage
+battery_percentage=$(cat "$battery_dir/capacity")
+
+# Extract battery state (charging or discharging)
+battery_state=$(cat "$battery_dir/status")
+
+# Print the battery percentage and state
+echo "Battery Level: $battery_percentage%"
+echo "Battery State: $battery_state"
