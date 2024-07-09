@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Get the CPU idle percentage from top command
+idle=$(top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1}')
+icon=󰒇
+# Print the CPU usage percentage
+echo "$icon"
+echo " $idle%"

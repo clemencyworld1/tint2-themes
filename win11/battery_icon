@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Define the battery directory
+battery_dir="/sys/class/power_supply/BAT0"
+
+# Extract battery percentage
+battery_percentage=$(cat "$battery_dir/capacity")
+
+# Extract battery state (charging or discharging)
+battery_state=$(cat "$battery_dir/status")
+
+# Determine battery icon based on battery percentage
+if [ "$battery_percentage" -ge 80 ]; then
+    icon="" # Full battery icon
+elif [ "$battery_percentage" -ge 60 ]; then
+    icon="" # Three-quarters battery icon
+elif [ "$battery_percentage" -ge 40 ]; then
+    icon="" # Half battery icon
+elif [ "$battery_percentage" -ge 20 ]; then
+    icon="" # One-quarter battery icon
+else
+    icon="" # Empty battery icon
+fi
+
+# Add charging icon if the battery is charging
+if [ "$battery_state" = "Charging" ]; then
+    icon=" $icon" # Charging icon with the battery icon
+fi
+
+# Print the battery percentage and icon
+echo "$icon 
+$battery_percentage%"
