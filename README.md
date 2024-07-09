@@ -3,7 +3,7 @@ collection of tint2 themes i created with screenshots. This is a personal collec
 
 1.  info
    
-![alt text]([https://github.com/clemencyworld1/tint2-themes/blob/info/info/info.png)
+![alt text](https://github.com/clemencyworld1/tint2-themes/blob/info/info/info.png)
 
 2.   win11
 
